@@ -2,7 +2,7 @@ import json
 import csv
 import os
 
-with open("C:/Users/dhrub/Documents/dhrubathapa/Project/Project1/data/raw/weather_raw.json", "r") as f:
+with open("data/raw/weather_raw.json", "r") as f:
     data = json.load(f)
 
 hourly = data["hourly"]
@@ -12,7 +12,7 @@ winds = hourly["wind_speed_10m"]
 
 os.makedirs("data/processed", exist_ok=True)
 
-with open("C:/Users/dhrub/Documents/dhrubathapa/Project/Project1/data/processed/weather_clean.csv", "w", newline="") as f:
+with open("data/processed/weather_clean.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerow(["time", "temperature_2m", "wind_speed_10m"])
 
